@@ -5,7 +5,7 @@ import { createAgentNativeQueryClient } from "@agent-native/core/client/hooks";
 import { getThemeInitScript } from "@agent-native/core/client/ui";
 import { AppProviders } from "@agent-native/toolkit/app/providers";
 import { useQueryClient } from "@tanstack/react-query";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import type { LinksFunction } from "react-router";
 
@@ -65,6 +65,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+function ClientOnly({ children }: { children: React.ReactNode }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  return mounted ? <>{children}</> : null;
+}
+
 function DbSyncSetup() {
   const qc = useQueryClient();
   useNavigationState();
@@ -79,8 +87,10 @@ export default function Root() {
   const [queryClient] = useState(() => createAgentNativeQueryClient());
   return (
     <AppToolkitProvider>
-      <AppProviders queryClient={queryClient}>
-        <DbSyncSetup />
+      <AppProviders queryClient={queryClient} isPublicPath={true}>
+        <ClientOnly>
+          <DbSyncSetup />
+        </ClientOnly>
         <AppLayout>
           <Outlet />
         </AppLayout>
