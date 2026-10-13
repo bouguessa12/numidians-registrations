@@ -258,6 +258,18 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(1);
+  opacity: 0.8;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 @keyframes float-gentle {
@@ -271,12 +283,12 @@ html {
 
 @keyframes pulse-glow {
   0%, 100% {
-    opacity: 0.18;
+    opacity: 0.16;
     transform: scale(1);
   }
   50% {
-    opacity: 0.32;
-    transform: scale(1.06);
+    opacity: 0.28;
+    transform: scale(1.05);
   }
 }
 
@@ -285,7 +297,7 @@ html {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(7px);
+    transform: translateY(6px);
   }
 }
 
