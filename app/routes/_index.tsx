@@ -404,21 +404,33 @@ function MobileIntro() {
           </svg>
         </a>
       </div>
-      <div className="relative mt-4 h-[320px] w-full overflow-hidden flex items-end">
-        {/* Massinisa statue: reversed with -scale-x-100 so he looks to the right! */}
+      <div className="relative mt-6 h-[295px]">
         <img
           src={IMG.statueMobile}
-          alt="Massinisa"
-          className="pointer-events-none absolute -left-2 -bottom-2 h-[395px] w-auto max-w-none -scale-x-100 rotate-[4deg] drop-shadow-[0_16px_28px_rgba(0,0,0,0.5)]"
+          alt=""
+          className="pointer-events-none absolute -left-[22px] -top-[20px] h-[385px] w-auto max-w-none rotate-[6deg] drop-shadow-[0_12px_24px_rgba(0,0,0,0.3)]"
         />
-        {/* Floating Speech bubble situated to the right of Massinisa */}
-        <div className="absolute right-3 sm:right-6 top-[135px] flex w-[190px] sm:w-[215px] items-center justify-center animate-float">
-          <div className="relative rounded-[20px] border border-white/20 bg-white/[0.12] p-4 shadow-[0_16px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-            <div className="pointer-events-none absolute -left-2 top-1/2 -translate-y-1/2 size-0 border-y-[6px] border-y-transparent border-r-[8px] border-r-white/20" />
-            <p className="text-xs sm:text-[13px] font-bold leading-snug text-white text-center">
-              Fill The Form Below To Join Numidians Empire !
-            </p>
-          </div>
+        <div className="absolute left-20 top-[163px] flex h-[113px] w-[223px] items-center justify-end animate-float">
+          <svg
+            width="223"
+            height="113"
+            viewBox="0 0 223 113"
+            fill="none"
+            className="absolute inset-0 drop-shadow-[0_12px_24px_rgba(0,0,0,0.25)]"
+            aria-hidden
+          >
+            <path
+              d="M54.877 2.5H193.5C208.136 2.5 220 14.3645 220 29V84C220 98.6355 208.136 110.5 193.5 110.5H68.5C53.8645 110.5 42 98.6355 42 84V76.9893C42 63.6492 33.597 51.7554 21.0234 47.2988L8.0498 42.7012C7.90709 42.6506 7.84267 42.5841 7.80469 42.5293C7.75817 42.4621 7.72167 42.3638 7.71777 42.2461C7.7139 42.1285 7.74323 42.0281 7.78516 41.958C7.81943 41.9008 7.88006 41.8305 8.01953 41.7705L31.1904 31.7979C37.7499 28.9746 42 22.5183 42 15.377C42.0001 8.26526 47.7653 2.50012 54.877 2.5Z"
+              fill="white"
+              fillOpacity="0.12"
+              stroke="white"
+              strokeOpacity="0.3"
+              strokeWidth="4"
+            />
+          </svg>
+          <p className="relative w-[181px] text-center text-sm font-bold leading-snug text-white">
+            Fill The Form Below To Join Numidians Empire !
+          </p>
         </div>
       </div>
     </div>
